@@ -37,6 +37,40 @@ int bin(int a[],int n)
     return s;
 }
 
+
+
+//updated and below solution works for all test cases in leetcode.
+class Solution {
+public:
+    int findPeakElement(vector<int>& a) {
+        int s=0;
+        int n=a.size();
+        int e=n-1;
+        int mid;
+        
+        while(s<e)
+        {
+            mid=s+(e-s)/2;
+            if(a[mid]<a[mid+1])
+            {
+                s=mid+1;
+            }
+            else
+            {
+                e=mid;
+            }
+        }
+        return s;
+    }
+};
+
+
+
+
+
+
+
+
 int main()
 {
    int a[]={4,5,6,7,8,1,2,3};
